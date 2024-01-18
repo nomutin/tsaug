@@ -1,0 +1,79 @@
+[project]
+name = "tsaug"
+version = "0.1.0"
+description = "Augmentation and transformation methods for time series data in imitation learning."
+dependencies = [
+    "numpy>=1.24.4",
+    "einops>=0.7.0",
+    "scipy>=1.10.1",
+]
+readme = "README.md"
+requires-python = ">= 3.8"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.rye]
+managed = true
+dev-dependencies = [
+    "torch>=2.1.2",
+    "black>=23.12.1",
+    "mypy>=1.8.0",
+    "isort>=5.13.2",
+    "pytest-cov>=4.1.0",
+    "ruff>=0.1.13",
+    "torchvision>=0.16.2",
+]
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.black]
+line-length = 79
+
+[tool.mypy]
+python_version = 3.8
+# following setting is same as pysen
+# https://github.com/pfnet/pysen/blob/main/setup.cfg#L12
+check_untyped_defs = true            # 型注釈がない関数やメソッドに対して型チェックを行う
+disallow_any_decorated = false 
+disallow_any_generics = false
+disallow_any_unimported = false
+disallow_incomplete_defs = true      # 型注釈の一部が欠けている関数やメソッドの定義を禁止
+disallow_subclassing_any = true
+disallow_untyped_decorators = true   # 型注釈がないデコレータの使用を禁止
+disallow_untyped_defs = true         # 型注釈がない関数やメソッドの定義を禁止
+ignore_errors = false                # エラーを無視
+ignore_missing_imports = true        # 型チェック対象外のモジュールを無視
+no_implicit_optional = true          # 暗黙のOptionalを禁止
+show_error_codes = true              # エラーコードを表示
+strict_equality = true               # 異なる型同士の比較を禁止
+strict_optional = true               # Noneと他の型の混在を許容しない
+warn_redundant_casts = true          # 不要な型変換に警告
+warn_unreachable = true              # 到達不能なコードに警告
+warn_unused_configs = true           # 使用されていないconfigオプションに警告
+warn_unused_ignores = true           # 使用されていない`# type: ignore`コメントに警告
+disallow_untyped_calls = false       # 型注釈がない関数やメソッドの呼び出しを禁止
+warn_return_any = false              # `Any`型を返す関数やメソッドに警告
+
+[tool.ruff]
+select = ["ALL"]
+ignore = [
+    "D203",    # one-blank-line-before-class
+    "D212",    # multi-line-summary-first-line
+    "S101",    # Use of assert detected
+    "ANN101",  # Missing type annotation for self in method
+    "ANN102",  # Missing type annotation for cls in classmethod
+    "I001",    # Import block is un-sorted or un-formatted
+]
+fixable = ["ALL"]
+unfixable = []
+exclude = [".git", ".ruff_cache", ".venv",]
+line-length = 79
+dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
+target-version = "py38"
+
+[tool.isort]
+profile = "black"
+line_length = 79
