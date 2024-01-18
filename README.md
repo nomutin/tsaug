@@ -7,3 +7,23 @@
 [![mypy](https://img.shields.io/badge/mypy-checked-blue)](http://mypy-lang.org/)
 
 Augmentation and transformation methods for time series data in imitation learning.
+
+## Installation
+
+### pip
+
+```shell
+pip install git+https://github.com/nomutin/tsaug.git
+```
+
+### poetry
+
+```shell
+poetry add git+https://github.com/nomutin/tsaug.git
+```
+
+### rye
+
+```shell
+rye add rssm --git=https://github.com/nomutin/tsaug.git
+```
