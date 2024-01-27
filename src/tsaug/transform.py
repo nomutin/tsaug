@@ -9,9 +9,10 @@ from typing import Literal, TypeVar
 import numpy as np
 import torch
 from einops import pack, reduce, unpack
-from scipy.special import softmax
 from torch import Tensor
 from torchvision.transforms.functional import to_tensor
+
+from tsaug.utils import softmax
 
 
 def softmax_transfer(

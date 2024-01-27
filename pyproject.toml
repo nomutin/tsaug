@@ -1,11 +1,10 @@
 [project]
 name = "tsaug"
-version = "0.1.0"
+version = "0.1.1"
 description = "Augmentation and transformation methods for time series data in imitation learning."
 dependencies = [
     "numpy>=1.24.4",
     "einops>=0.7.0",
-    "scipy>=1.10.1",
 ]
 readme = "README.md"
 requires-python = ">= 3.8"

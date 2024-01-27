@@ -47,7 +47,6 @@ pytest==7.4.4
 pytest-cov==4.1.0
 requests==2.31.0
 ruff==0.1.13
-scipy==1.10.1
 sympy==1.12
 tomli==2.0.1
 torch==2.1.2
